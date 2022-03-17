@@ -9,9 +9,21 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>CICLOS JS</title>    
     <link rel="shortcut icon" href="imagenes/ciclo.png"  type="image/x-icon">  
-    <script src="main.js"></script>
+    
 </head>
 <body>
     <h1>VER RESULTADOS EN CONSOLA: F12</h1>
-</body>
+    <form id="formulario">
+        <input type="text" id="Nombre">
+        <input type="text" id="Apellido">
+    </form>
+    <button type="submit" form="formulario" data-envio="api.php">ENVIAR</button> 
+
+    <form id="datos">
+        <input type="number" id="Num1">
+        <input type="number" id="Num2">
+    </form>
+    <button type="submit" form="datos" data-envio="api.py">ENVIAR DATOS</button> 
+    <script src="main.js"></script>
+</body>    
 </html>
