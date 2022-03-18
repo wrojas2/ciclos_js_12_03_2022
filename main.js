@@ -1,14 +1,11 @@
-let papitas = 10;
-console.log(`Ciclo 1`);
-while (papitas){
-  console.log(`Me comí ${papitas} papitas`)
-  papitas--;
-}
-
-console.groupEnd();
-console.group(`Ciclo 2`)
-while (papitas<=10){
-  console.log(`Me comí ${papitas} papitas`)
-  papitas++
-}
-console.groupEnd
+var papitas = 1;
+do{
+    console.log(`Me comí ${papitas} papitas`);
+    papitas++;
+}while(papitas<=10)
+console.log(`RESTANDO PAPITAS`);
+papitas = 10
+do{
+    console.log(`Me quedan ${papitas} papitas`);
+     papitas--;
+ }while(papitas>0)
