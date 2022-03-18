@@ -1,38 +1,31 @@
-let data = new Array(5).fill(null);
-Object.preventExtensions(data);
-data.fill("William", 4);
 
-console.log("PRIMER CASO") 
-data.forEach(function(element){  
-    console.log(element) 
- });
+// let data = new Array(5).fill(null);
+// Object.preventExtensions(data);
+// data.fill("Miguel", 4);
+function saludar() {
+    return "Hola Como estas";
+}
+let data = {
+    nombre: "William",
+    apellido : "Rojas",
+    edad: 45,
+    saludar
+}
 
- lista = {
-    nombre: "WILLIAM",
-    apellido: "ROJAS"
- }
- console.log(" ") 
- console.log("SEGUNDO CASO") 
- // object.Keys permite mostrar los nombres de las variables
- // object.values permite mostrar el valor de las variables
- // object.entries
- // V es el valor, i es el indice y clone clona el array
- Object.entries(lista).forEach(function(v,i,clone){
-     console.log(clone);      
- });
-console.log(" ") 
-console.log("TERCER CASO - PROTOTIPO FORECH") 
-addEventListener("submit", function(e){
-   Array.from(e.target).forEach(element=>{
-       if(element.nodeName != "BUTTON"){
-           console.log(element.value);
-       }
-       else{
-           console.log(element.dataset.envio);
-       }       
-    })
-    e.preventDefault();
+let datos = Object.entries(data).map(function(elemt){
+    let obj = {};
+    if(typeof(elemt[1]) == "function"){
+        obj.saludar = data.saludar();
+    }else{
+        if(elemt[0] == "nombre"){
+            obj[elemt[0]] = `${elemt[1].toUpperCase()} Carlos`;
+        }else{
+            obj[elemt[0]] = elemt[1];
+        }
+    }
+    return obj;
 })
 
- 
- 
+console.log(data);
+console.log(Object.assign({}, ...datos) );
+
